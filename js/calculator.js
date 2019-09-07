@@ -294,7 +294,7 @@ $('#id3').on("click keydown keypress focus change keyup blur", function() {
             var id2 = $('#id10').val(); 
             var result = Number(id1) + Number(id2);  
             $('#id11').val(result.toFixed(1));
-}); 
+});  
 $('#id4').on("click keydown keypress focus change keyup blur", function() { 
             var id1 = $('#id7').val();  
             var id2 = $('#id10').val(); 
@@ -332,6 +332,16 @@ $('#id6').on("change click keydown keypress focus keyup blur", function() {
             var val2 = Number(id2); 
             var result = (val2 * 100) / val1 ; 
             $('#id12').val(result.toFixed(1) + "%");
+            changechart();
+}); 
+$('#bw').on("change click keydown keypress focus keyup blur", function() {
+            var id1 = $('#id4').val();
+            var id2 = $('#id11').val();
+            var val1 = Number(id1);
+            var val2 = Number(id2); 
+            var result = (val2 * 100) / val1 ; 
+            $('#id12').val(result.toFixed(1) + "%");
+            changechart();
 }); 
 $('#id5').on("click keydown keypress focus change keyup blur", function() {
             var id1 = $('#id4').val();
