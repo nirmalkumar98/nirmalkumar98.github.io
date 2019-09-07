@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Calculator</title>
+</head>
+
+<body onload="changechart()">
+  <!-- START HERE -->
+  <body data-gr-c-s-loaded="true">
+    <div class="container">
+      <div id="app">
+        <div class="p-5">
+          <h1 class="text-center">Food & Health Calculator</h1>
+           <form action="#" class="row py-4">
+
+            <div class="form-group col-md-6">
+            <label for=""> Body weight (lbs)</label>
+             <input   id="bw" name="bw" class="form-control">
+           </div>
+          <div class="form-group  col-md-6">
+            <label for=""> Over 20% BF as man or over 30% as woman?</label>
+             <select class="form-control"> 
+                  <option value="yes">Yes</option>
+                  <option value="no" selected>No (Default)</option>
+            </select> 
+           </div> 
+          <div class="form-group col-md-12">
+            <label for=""> What is your body fat?</label>
+            <input   name="phone" class="form-control" value="None" disabled>
+          </div>
+          <div class="form-group col-md-12">
+            <label> Optimal protein intake per day (g) to gain muscle as a serious trainee ?</label>
+            <input   id="id1" name="name1" class="form-control" readonly>
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Meals per day ?</label> 
+                <select id="id2" name="name2" class="form-control">
+                  <option value="0">select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>  
+          </div> 
+          <div class="form-group col-md-12">
+            <label for=""> Optimal protein per meal (grams)?</label>
+            <input   id="id3" name="name3" class="form-control" readonly>
+          </div> 
+          <div class="form-group col-md-12"> 
+            <label for=""> Optimal methionine per meal (grams)?</label>
+            <input   id="id4" name="name4" class="form-control" readonly>
+          </div> 
+          <div class="form-group col-md-12"> 
+            <label for=""> Optimal leucine per meal (grams)?</label>
+            <input   id="leu1" name="nameleu1" class="form-control" readonly>
+          </div> 
+          <div class="form-group col-md-12">
+            <label for=""> Protein source 1?</label>
+            <select id="id5" name="name5" class="form-control">
+                  <option value="none">Protein source</option>
+                  <option value="one">Egg, whole</option>
+                  <option value="two">Lentils, cooked</option>
+                  <option value="three">Casein protein powder</option> 
+                  <option value="four">Soy beans (edamame), cooked</option> 
+                  <option value="five">Soy protein isolate</option>
+                  <option value="six">Tofu, firm</option>
+                  <option value="seven">Tempeh</option>
+                  <option value="eight">Kidney beans, cooked</option>
+                  <option value="nine">Pea protein powder</option>
+                  <option value="ten">Rice protein powder (brown rice)</option>
+                  <option value="eleven">Greek yogurt (low fat)</option>
+                  <option value="twelve">Powdered peanut butter</option>
+                  <option value="thirteen">Nutritional yeast</option> 
+                  <option value="fourteen">Quinoa</option> 
+                  <option value="fifteen">Lentil pasta</option>  
+                  <option value="sixteen">Permesan cheese</option>  
+                  <option value="seventeen">Seitan</option>  
+                  <option value="eighteen">Meat replacement</option>  
+            </select>  
+          </div>  
+          <div class="form-group col-md-12">
+            <label for=""> Amount of protein source 1 in grams?</label>
+            <input   id="id6" name="name6" class="form-control">
+          </div> 
+           <div class="form-group col-md-12">
+            <label for=""> Methionine in source 1?</label>
+            <input   id="id7" name="name7" class="form-control" readonly>
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Leucine in source 1?</label>
+            <input   id="leu2" name="nameleu2" class="form-control" readonly>
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Protein source 2?</label>
+            <select id="id8" name="name8" class="form-control">
+                  <option value="none">Protein source</option>
+                  <option value="one">Egg, whole</option>
+                  <option value="two">Lentils, cooked</option>
+                  <option value="three">Casein protein powder</option> 
+                  <option value="four">Soy beans (edamame), cooked</option> 
+                  <option value="five">Soy protein isolate</option>
+                  <option value="six">Tofu, firm</option>
+                  <option value="seven">Tempeh</option>
+                  <option value="eight">Kidney beans, cooked</option>
+                  <option value="nine">Pea protein powder</option>
+                  <option value="ten">Rice protein powder (brown rice)</option>
+                  <option value="eleven">Greek yogurt (low fat)</option>
+                  <option value="twelve">Powdered peanut butter</option>
+                  <option value="thirteen">Nutritional yeast</option> 
+                  <option value="fourteen">Quinoa</option> 
+                  <option value="fifteen">Lentil pasta</option>  
+                  <option value="sixteen">Permesan cheese</option>  
+                  <option value="seventeen">Seitan</option>  
+                  <option value="eighteen">Meat replacement</option> 
+            </select>  
+          </div>  
+          <div class="form-group col-md-12">
+            <label for=""> Amount of protein source 2 in grams?</label>
+            <input   id="id9" name="name9" class="form-control">
+          </div> 
+           <div class="form-group col-md-12">
+            <label for=""> Methionine in source 2?</label>
+            <input   id="id10" name="name10" class="form-control" readonly> 
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Leucine in source 2?</label>
+            <input   id="leu3" name="nameleu3" class="form-control" readonly> 
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Total methionine in meal</label>
+            <input   id="id11" name="name11" class="form-control" readonly>
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Total Leucine in meal</label>
+            <input   id="leu4" name="nameleu4" class="form-control" readonly>
+          </div>
+          <div class="form-group col-md-12">
+            <label for=""> Percentage of optimal methionine per meal</label>
+            <input   id="id12" name="name12" class="form-control" readonly>
+          </div> 
+          <div class="form-group col-md-12">
+            <label for=""> Percentage of optimal Leucine per meal</label>
+            <input   id="leu5" name="nameleu5" class="form-control" readonly>
+          </div> 
+       </form>  
+      </div>
+    </div>
+    <div>
+      <div class="row text-center">
+        <!--  <div class="col-md-6">
+        Leucine: <input   id="input-leu" onkeyup="changechart()" value="35" max="100" name="">% 
+      </div>
+      <div class="col-md-6">
+        Methionine: <input   id="input-meth" onkeyup="changechart()" value="35" max="100" name="">%  
+      </div> -->
+      <br />
+      <br />
+      <br />
+      </div>
+      
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    </div>
+  
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" __idm_frm__="1597"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><div id="eUcsA]e$1565951810566"></div></body>
+
+  <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/calculator.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+</body>
+
+</html>

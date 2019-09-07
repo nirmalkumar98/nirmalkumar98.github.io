@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+.highcharts-data-label-color-0 {
+    display: none;
+}
+
+	</style>
+</head>
+<body onload="changechart()">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+Leucine: <input type="text" id="input-leu" onkeyup="changechart()" value="35" max="100" name="">% <br />
+Methionine: <input type="text" id="input-meth" onkeyup="changechart()" value="35" max="100" name="">%
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+
+function changechart(){
+		var leu=document.getElementById("input-leu").value; 
+		var meth=document.getElementById("input-meth").value; 
+
+		free_space1 = parseFloat(100 - leu);
+		free_space2 =  parseFloat(100 - meth);
+
+		free_space = [free_space1, free_space2];
+		fill_space = [parseFloat(leu), parseFloat(meth)];
+		console.log(free_space);
+		console.log(fill_space);
+
+	  Highcharts.chart('container', {
+	  chart: {
+	    type: 'column'
+	  },
+	  title: {
+	    text: 'Stacked column chart'
+	  },
+	  xAxis: {
+	    categories: ['Leucine', 'Methionine']
+	  },
+	  yAxis: {
+	    min: 0,
+	    max: 100,
+	    title: {
+	      text: 'Total'
+	    },
+	    stackLabels: {
+	      enabled: false,
+	      style: {
+	        fontWeight: 'normal',
+	        color: ( // theme
+	          Highcharts.defaultOptions.title.style &&
+	          Highcharts.defaultOptions.title.style.color
+	        ) || 'red'
+	      }
+	    }
+	  },
+	  legend: {
+	  	enabled: false,
+	    align: 'right',
+	    x: -30,
+	    verticalAlign: 'top',
+	    y: 25,
+	    floating: true,
+	    backgroundColor:
+	      Highcharts.defaultOptions.legend.backgroundColor || 'white',
+	    borderColor: '#CCC',
+	    borderWidth: 1,
+	    shadow: false
+	  },
+	  tooltip: {
+	  	enabled: false,
+	    headerFormat: '<b>{point.x}</b><br/>',
+	    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+	  },
+	  plotOptions: {
+	    column: {
+	      stacking: 'normal',
+	      dataLabels: {
+	        enabled: true,
+	        formatter: function ()  {    
+	        //if(this.x == 'John') 
+	            var colors = Highcharts.getOptions();
+	            console.log(colors)
+	            return this.y+"%";
+	          }
+	      }
+	    }
+	  },
+	  series: [{
+	    name: 'free_space',
+	    data: free_space //[30, 65]
+	  }, {
+	    name: 'Jane',
+	    data: fill_space
+	  }]
+	});
+
+	}
+
+
+</script>
+
+</body>
+</html>
