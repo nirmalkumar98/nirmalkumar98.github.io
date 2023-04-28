@@ -11193,6 +11193,17 @@ p {
   overflow: hidden;
 }
 
+.contact-info{
+   
+      justify-content: center;
+     
+      flex-basis: min-content;
+      margin: auto !important;
+}
+.p-card { 
+  padding-bottom: 30px;
+}
+
 .portfolio-card .portfolio-card-img {
   width: 100%;
 }
